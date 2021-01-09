@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { AboutPage } from '../about/about.page';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  public aboutPage=AboutPage;
+  constructor(public nav:NavController) {
+  }
 
-  constructor() {}
+  public pushAboutPage(){
+    this.nav.navigateForward('/about');
+
+  }
 
 }
